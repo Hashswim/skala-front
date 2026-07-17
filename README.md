@@ -30,6 +30,37 @@ skala-front/
 | `myTrip.html` | 여행 앨범 — `audio`/`video`/`img`, Grid 3열 카드 레이아웃 |
 | `signUp.html` / `signUpResult.html` | 회원가입 폼과 제출 완료 페이지 |
 
+## 페이지 구현
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/index.png" width="100%"><br>
+      <sub><b>index.html</b> — 메인 허브</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/myProfile.png" width="100%"><br>
+      <sub><b>myProfile.html</b> — 자기소개</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/screenshots/myHoliday.png" width="100%"><br>
+      <sub><b>myHoliday.html</b> — 휴일 일과</sub>
+    </td>
+    <td align="center">
+      <img src="docs/screenshots/myTrip.png" width="100%"><br>
+      <sub><b>myTrip.html</b> — 여행 앨범</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="docs/screenshots/signUp.png" width="50%"><br>
+      <sub><b>signUp.html</b> — 회원가입</sub>
+    </td>
+  </tr>
+</table>
+
 ## 과제 요구사항 반영 내용
 
 ### HTML
