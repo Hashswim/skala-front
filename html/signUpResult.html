@@ -9,12 +9,17 @@
 <body>
     <div class="container">
 
-    <!-- signUp.html의 form이 이 페이지로 제출되면서 도착하는 회원가입 완료 안내 페이지 -->
-    <h1>🎉 Welcome to SKALA Members</h1>
-    <p>Welcome to SKALA-FRONT Members!</p>
+    <!-- signUp.html의 form이 method="get"으로 이 페이지에 제출되면서, 입력했던 값들이 URL 쿼리스트링(?userId=...)으로 넘어옴.
+         script/signUpResult.js가 이 값을 읽어 h1/p/dl 자리를 채워 넣음 -->
+    <h1 id="welcome-heading">🎉 Welcome to SKALA Members</h1>
+    <p id="welcome-message">Welcome to SKALA-FRONT Members!</p>
+
+    <!-- 회원가입 폼을 거쳐서 들어온 경우에만 script/signUpResult.js가 이 자리에 입력했던 항목들을 채워 넣음 -->
+    <dl id="summary-list" class="summary-list"></dl>
+
     <hr>
 
-    <h3>Notifications</h3>
+    <h3>📢 Notifications</h3>
     <ul>
         <li>A subscription confirmation email has been sent to the email address you entered.</li>
         <li>For security, please check your password again after you log in for the first time.</li>
@@ -23,14 +28,15 @@
 
     <br>
 
-    <h3>Move to</h3>
-    <p>Move to another page.</p>
+    <h3>🔗 Continue Exploring</h3>
+    <p>Jump right into the site with the shortcuts below.</p>
 
     <!-- 회원가입 직후 바로 둘러볼 만한 페이지로 이동하는 링크 -->
     <ul>
         <li><a href="myProfile.html">👤 Profile</a></li>
         <li><a href="myClass.html">📅 Schedule</a></li>
         <li><a href="myHoliday.html">🛋️ Holidays</a></li>
+        <li><a href="myTrip.html">✈️ My Trip</a></li>
     </ul>
 
     <br>
@@ -38,5 +44,7 @@
     <p><small>© 2026 SKALA. All rights reserved.</small></p>
 
     </div>
+
+    <script src="../script/signUpResult.js"></script>
 </body>
 </html>

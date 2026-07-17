@@ -454,6 +454,29 @@ aside section:last-child button {
     color: var(--color-text);
 }
 
+/* signUpResult.html: 가입 시 입력한 항목들을 "라벨 | 값" 2단으로 나열하는 요약 목록 */
+.summary-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--color-secondary-bg);
+    border-radius: 8px;
+    font-size: 0.7em;
+}
+
+.summary-list dt {
+    font-weight: bold;
+    color: var(--color-heading);
+}
+
+.summary-list dd {
+    margin: 0;
+    color: var(--color-text);
+}
+
 /* myClass 페이지 강의 설명 툴팁: data-tooltip이 있는 셀에 마우스를 올리면 말풍선으로 설명을 보여줌 */
 td[data-tooltip] {
     position: relative;
