@@ -1,36 +1,64 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 휴일 일과</title>
+    <title>My Holidays</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
 
-    <h1>🎉 나의 휴일 일과</h1>
-    <br>
+    <h1>🎉 My Holidays</h1>
 
-    <h2>🛏️ <u>느긋한 아침</u></h2>
-    <p><b>09:00</b> - 😴 늦잠 자는 행복</p>
-    <p><b>10:00</b> - 🍳 여유 있게 <mark>브런치</mark> 즐기기</p>
-    <p><b>11:00</b> - ☕ <b>커피 한 잔</b>과 음악 감상 🎵</p>
-    <br>
+    <!-- holiday-layout: 왼쪽엔 시간대별 텍스트 일정, 오른쪽엔 같은 일정을 24시간 원형 시계로 요약해서 보여줌 -->
+    <div class="holiday-layout">
 
-    <h2>🚶 <u>오후 활동</u></h2>
-    <p><b>13:00</b> - 🏞️ 공원 산책하며 <b>마음 정리</b></p>
-    <p><b>14:30</b> - 📷 사진 찍으며 <b>일상의 순간 기록</b></p>
-    <p><b>16:00</b> - 🛍️ 충동구매 대신 <mark>창의적인 쇼핑</mark></p>
-    <br>
+        <!-- 시간대별로 h2 소제목 3개(아침/오후/저녁)로 나누고, 각 활동은 <b>시간</b> - 내용 형태의 p 한 줄씩으로 구성 -->
+        <div class="holiday-timeline">
+            <h2>🛏️ Lazy Morning</h2>
+            <p><b>09:00</b> - 😴 Lazy morning</p>
+            <p><b>10:00</b> - 🍳 Breakfast</p>
+            <p><b>11:00</b> - ☕ Enjoy music with <b>a cup of coffee</b> 🎵</p>
+            <br>
 
-    <h2>🎬 <u>저녁과 밤</u></h2>
-    <p><b>18:00</b> - 🥘 <b>맛있는 저녁</b> 만들기</p>
-    <p><b>20:00</b> - 🎥 영화 감상 (코미디 추천 😂)</p>
-    <p><b>23:00</b> - 📖 짧은 독서 후 힐링 타임 🛁</p>
-    <br>
+            <h2>🚶 Afternoon</h2>
+            <!-- <mark>은 실제 사는 곳(광주)과 연결되는 진짜 지명이라 강조 표시함 -->
+            <p><b>13:00</b> - 🏔️ Climbing the <mark>Mudeungsan</mark> mountain</p>
+            <p><b>13:30</b> - 📷 Taking a photo of <b>everyday joys</b></p>
+            <p><b>14:00</b> - 🛍️ Creative shopping</p>
+            <p><b>15:00</b> - 📚 SKCT prep</p>
+            <br>
 
-    <p>📅 휴일 버전 작성일: 2026년 5월</p>
+            <h2>🎬 Evening and Night</h2>
+            <p><b>18:00</b> - 🍽️ Dinner</p>
+            <p><b>19:00</b> - 🎥 Watching a movie</p>
+            <p><b>20:00</b> - 📖 Reading a book and relaxing</p>
+            <p><b>21:00</b> - 🗣️ English study</p>
+        </div>
+
+        <!-- holiday-clock: 24시간을 하루 4개 구간(수면/늦은 아침/오후/저녁)으로 나눈 원형 시간표 -->
+        <div class="holiday-clock">
+            <div class="clock-face">
+                <!-- conic-gradient로 4개 구간을 색칠한 도넛형 링 -->
+                <div class="clock-ring"></div>
+
+                <!-- 링 가운데를 배경색으로 덮어 도넛 모양을 만들고, 그 자리에 중앙 라벨을 표시 -->
+                <div class="clock-hole">
+                    <span class="clock-center-label">Time Table</span>
+                </div>
+            </div>
+
+            <!-- 원형 시계의 4가지 색상이 각각 어떤 시간대를 의미하는지 알려주는 범례 -->
+            <ul class="clock-legend">
+                <li><span class="legend-swatch legend-sleep"></span>🌙 Sleep <span class="legend-time">00:00–09:00</span></li>
+                <li><span class="legend-swatch legend-morning"></span>🛏️ Lazy Morning <span class="legend-time">09:00–12:00</span></li>
+                <li><span class="legend-swatch legend-afternoon"></span>🚶 Afternoon <span class="legend-time">12:00–18:00</span></li>
+                <li><span class="legend-swatch legend-evening"></span>🎬 Evening & Night <span class="legend-time">18:00–24:00</span></li>
+            </ul>
+        </div>
+
+    </div>
 
     </div>
 </body>

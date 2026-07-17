@@ -1,77 +1,89 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 강의 시간표</title>
+    <title>My Class Schedule</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>📅 나의 강의 시간표</h1>
-        
-        <table border="1" cellpadding="7" cellspacing="0">
+        <h1>📅 My Class Schedule</h1>
+
+        <!-- colgroup: 10개 컬럼(Day 1칸 + 시간 9칸)을 각 10%씩 균등한 고정 폭으로 지정 -->
+        <table border="1" cellspacing="0">
+            <colgroup>
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+                <col style="width: 10%;">
+            </colgroup>
             <thead>
-                <tr bgcolor="#eeeeee">
-                    <th>시간</th>
-                    <th>월요일</th>
-                    <th>화요일</th>
-                    <th>수요일</th>
-                    <th>목요일</th>
-                    <th>금요일</th>
+                <tr style="background-color: var(--color-secondary-bg);">
+                    <!-- (0,0) 모서리 셀: Day/Period 두 축 이름을 대각선으로 나눠 표기 (스타일은 style.css의 .corner-cell 참고) -->
+                    <th class="corner-cell">
+                        <span class="corner-label period">Period</span>
+                        <span class="corner-label day">Day</span>
+                    </th>
+                    <th>09:00 - 10:00</th>
+                    <th>10:00 - 11:00</th>
+                    <th>11:00 - 12:00</th>
+                    <th>12:00 - 13:00</th>
+                    <th>13:00 - 14:00</th>
+                    <th>14:00 - 15:00</th>
+                    <th>15:00 - 16:00</th>
+                    <th>16:00 - 17:00</th>
+                    <th>17:00 - 18:00</th>
                 </tr>
             </thead>
             <tbody>
+                <!-- 요일이 행(row), 시간이 열(column)인 구조. colspan은 한 과목이 여러 시간대에 걸쳐 있음을 의미 -->
                 <tr>
-                    <td>09:00 - 10:00</td>
-                    <td rowspan="3">Vue.js<br>웹 프레임워크 💻</td>
-                    <td rowspan="2">네트워크<br>보안 기초 🔒</td>
-                    <td rowspan="3">웹 시스템<br>설계 및 분석 🛠️</td>
-                    <td>IT 트렌드 특강 💡</td>
-                    <td rowspan="3">자바스크립트<br>심화 실습 🚀</td>
+                    <th scope="row">Monday</th>
+                    <td colspan="3" data-tooltip="Learn Vue.js fundamentals to build reactive, component-based web UIs.">Vue.js<br>Web Framework 💻</td>
+                    <!-- 점심시간은 모든 요일에 공통이라, 이 셀 하나가 rowspan="5"로 아래 4개 행까지 세로로 뚫고 내려감 -->
+                    <td rowspan="5" style="background-color: var(--color-secondary-bg);">🍱<br>Lunch<br>Break<br>🍱</td>
+                    <td colspan="4" data-tooltip="Learn UI/UX design principles and industry-standard design guidelines.">UI/UX<br>Design Standards 🎨</td>
+                    <td data-tooltip="A guest lecture on career paths and startup opportunities in tech.">Career & Startup<br>Special Lecture 💼</td>
+                </tr>
+                <!-- Tuesday~Friday 행에는 점심시간 자리에 <td>가 없음: Monday의 rowspan="5" 셀이 이미 그 자리를 차지하고 있기 때문 -->
+                <tr>
+                    <th scope="row">Tuesday</th>
+                    <td colspan="2" data-tooltip="Core concepts of network security: firewalls, encryption, and threat prevention.">Network<br>Security Basics 🔒</td>
+                    <td data-tooltip="Practice solving coding problems to sharpen algorithmic thinking.">Algorithm Problem Solving 🧠</td>
+                    <td colspan="2" data-tooltip="Manage Linux servers: file systems, permissions, and shell scripting.">Linux<br>System Administration 🐧</td>
+                    <td colspan="3" data-tooltip="Master Git commands and collaborative workflows on GitHub.">Git & GitHub<br>Version Control 🐙</td>
                 </tr>
                 <tr>
-                    <td>10:00 - 11:00</td>
-                    <td rowspan="2">데이터베이스<br>SQL 실습 🗄️</td>
+                    <th scope="row">Wednesday</th>
+                    <td colspan="3" data-tooltip="Learn how to design and analyze scalable web system architecture.">Web System<br>Design & Analysis 🛠️</td>
+                    <td colspan="2" data-tooltip="Introduction to AWS core services: EC2, S3, and cloud infrastructure basics.">Cloud<br>AWS Basics ☁️</td>
+                    <td colspan="3" data-tooltip="Introductory concepts of artificial intelligence and machine learning models.">Artificial Intelligence<br>Machine Learning Basics 🤖</td>
                 </tr>
                 <tr>
-                    <td>11:00 - 12:00</td>
-                    <td>알고리즘 문제풀이 🧠</td>
-                </tr>
-                
-                <tr align="center" bgcolor="#f9f9f9">
-                    <td>12:00 - 13:00</td>
-                    <td colspan="5">🍱 점 심 시 간 🍱</td>
-                </tr>
-                
-                <tr>
-                    <td>13:00 - 14:00</td>
-                    <td rowspan="4">UI/UX<br>디자인 표준 🎨</td>
-                    <td rowspan="2">리눅스<br>시스템 관리 🐧</td>
-                    <td rowspan="2">클라우드<br>AWS 기초 ☁️</td>
-                    <td rowspan="3">자료구조 📊</td>
-                    <td>개인 프로젝트 🚀</td>
+                    <th scope="row">Thursday</th>
+                    <td data-tooltip="A guest lecture covering the latest trends in the IT industry.">IT Trends Special Lecture 💡</td>
+                    <td colspan="2" data-tooltip="Hands-on practice writing and optimizing SQL queries.">Database<br>SQL Practice 🗄️</td>
+                    <td colspan="3" data-tooltip="Study core data structures like stacks, queues, trees, and graphs.">Data Structures 📊</td>
+                    <td colspan="2" data-tooltip="Hands-on practice analyzing large-scale datasets.">Big Data<br>Analysis Practice 📈</td>
                 </tr>
                 <tr>
-                    <td>14:00 - 15:00</td>
-                    <td rowspan="3">오픈소스<br>소프트웨어 🔓</td>
-                </tr>
-                <tr>
-                    <td>15:00 - 16:00</td>
-                    <td rowspan="3">Git & GitHub<br>버전 관리 🐙</td>
-                    <td rowspan="3">인공지능<br>머신러닝 기초 🤖</td>
-                </tr>
-                <tr>
-                    <td>16:00 - 17:00</td>
-                    <td rowspan="2">빅데이터<br>분석 실무 📈</td>
-                </tr>
-                <tr>
-                    <td>17:00 - 18:00</td>
-                    <td>취업 창업 특강 💼</td>
-                    <td>주간 회고 📝</td>
+                    <th scope="row">Friday</th>
+                    <td colspan="3" data-tooltip="Deep dive into advanced JavaScript concepts: closures, async/await, and modules.">JavaScript<br>Advanced Practice 🚀</td>
+                    <td data-tooltip="Dedicated time to build and refine your own personal project.">Personal Project 🚀</td>
+                    <td colspan="3" data-tooltip="Explore contributing to and building open source software projects.">Open Source<br>Software 🔓</td>
+                    <td data-tooltip="Reflect on the week's learning and share feedback as a group.">Weekly Retrospective 📝</td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <!-- 위 표의 셀 크기가 고정되어 있어서, 내용이 넘치는 셀은 이 스크립트가 글자 크기를 자동으로 줄여줌 -->
+    <script src="../script/fitTableText.js"></script>
 </body>
 </html>

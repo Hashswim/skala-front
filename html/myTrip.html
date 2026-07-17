@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 여행 앨범</title>
+    <title>My Travel Album</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🌍 나의 여행 앨범 🎵</h1>
+        <h1>🏔️ My Travel Album 🎵</h1>
+        <!-- source가 재생 안 되는 아주 오래된 브라우저를 위한 대체 텍스트(폴백) -->
         <audio controls>
-        <source src="../media/music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+            <source src="../media/music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     <hr>
+    <!-- trip-grid-container: CSS Grid로 사진 3장을 3열로 배치 (좁은 화면에선 1열로 자동 전환, style.css 미디어쿼리 참고) -->
     <div class="trip-grid-container">
         <p class="trip-card">
-            <img src="../media/리장.jpg" width="400" height="200" alt="리장 호도협"><br>리장 호도협 (2025년)
+            <!-- focus-bottom: 이 사진만 피사체가 아래쪽에 있어서, 잘릴 때 위쪽이 아니라 아래쪽 기준으로 자르도록 지정 -->
+            <img src="../media/img_01.jpeg" class="focus-bottom" alt="Yongmabong"><br>Yongmabong (2022)
         </p>
         <p class="trip-card">
-            <img src="../media/세부.jpg" width="400" height="200" alt="세부 탑스힐 "><br>세부 탑스힐 (2024년)
+            <img src="../media/img_02.jpeg" alt="Sapaesan"><br>Sapaesan (2023)
         </p>
         <p class="trip-card">
-            <img src="../media/홋카이도.jpg" width="400" height="200" alt="훗카이도 대설산"><br>훗카이도 대설산 (2025년)
+            <img src="../media/img_03.jpeg" alt="Taebaeksan"><br>Taebaeksan (2024)
         </p>
     </div>
     <hr>
-    <h2>📹 나의 여행 브이로그</h2>
-    <p>
+    <h2>📹 My Travel Vlog</h2>
+    <!-- vlog-wrapper: video가 기본적으로 인라인 요소라 왼쪽에 붙는 걸 막고 가운데로 정렬시키는 감싸는 태그 -->
+    <p class="vlog-wrapper">
         <video width="400" height="225" controls>
             <source src="../media/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <br>리장의 아름다운 음악 ✈️
+        <br>🌅 The Beautiful Sunrise of Seongsan Ilchulbong 🌅
     </p>
     </div>
 </body>

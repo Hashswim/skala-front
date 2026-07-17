@@ -14,28 +14,28 @@ function startGame() {
 
     // 2. 본격적인 게임 무한 루프 시작
     while (true) {
-        var userGuess = Number(prompt("1부터 50 사이의 숫자 중 컴퓨터가 생각한 숫자는 무엇일까요?"));
-        
+        var userGuess = Number(prompt("Guess a number between 1 and 50 that the computer is thinking of!"));
+
         // 사용자가 취소 버튼을 누르거나 창을 닫으면 게임을 즉시 종료하는 예외 처리 방어코드
         if (userGuess === 0) {
-            alert("게임이 취소되었습니다.");
+            alert("Game cancelled.");
             break;
         }
 
         count = count + 1;
 
         if (userGuess === computerNum) {
-            alert("🎉 정답입니다! 축하합니다!\n👉 도전 횟수: " + count + "번 만에 맞추셨습니다.");
-            break; 
-            
+            alert("🎉 Correct! Congratulations!\n👉 You got it in " + count + " tries.");
+            break;
+
         } else if (userGuess > computerNum) {
-            alert("🔽 Down! 더 작은 숫자를 입력해 보세요. (현재 " + count + "회 도전 중)");
-            
+            alert("🔽 Down! Try a smaller number. (Attempt " + count + ")");
+
         } else if (userGuess < computerNum) {
-            alert("🔼 Up! 더 큰 숫자를 입력해 보세요. (현재 " + count + "회 도전 중)");
-            
+            alert("🔼 Up! Try a bigger number. (Attempt " + count + ")");
+
         } else {
-            alert("⚠️ 올바른 숫자를 입력하지 않으셨습니다. 다시 시도해 주세요.");
+            alert("⚠️ You didn't enter a valid number. Please try again.");
         }
     }
 }
